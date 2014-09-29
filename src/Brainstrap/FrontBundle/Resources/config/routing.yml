@@ -1,0 +1,3 @@
+brainstrap_front_homepage:
+    path:     /
+    defaults: { _controller: BrainstrapFrontBundle:Default:index }

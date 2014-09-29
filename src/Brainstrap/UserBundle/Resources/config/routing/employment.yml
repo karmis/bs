@@ -1,0 +1,30 @@
+employment:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Employment:index" }
+
+employment_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Employment:show" }
+
+employment_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Employment:new" }
+
+employment_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Employment:create" }
+    requirements: { _method: post }
+
+employment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Employment:edit" }
+
+employment_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Employment:update" }
+    requirements: { _method: post|put }
+
+employment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Employment:delete" }
+    requirements: { _method: post|delete }

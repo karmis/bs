@@ -1,0 +1,54 @@
+<?php
+
+namespace Brainstrap\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SkillCategory
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class SkillCategory
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="caption", type="string", length=255)
+     */
+    private $caption;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="published", type="boolean")
+     */
+    private $published;
+
+    /**
+     * Partitions
+     * @ORM\ManyToMany(targetEntity="SkillPath", orphanRemoval=false, inversedBy="categories")
+     * @ORM\JoinTable(name="Category_Path",
+     *      joinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="path_id", referencedColumnName="id")}
+     *      )
+     */
+    private $partitions;
+}

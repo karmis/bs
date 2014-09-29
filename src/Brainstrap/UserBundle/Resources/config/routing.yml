@@ -1,0 +1,47 @@
+brainstrap_user_skill_skill:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/skill_skill.yml"
+    prefix:   /skill_skill
+
+brainstrap_user_skill_skillcategory:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/skill_skillcategory.yml"
+    prefix:   /skill_skillcategory
+
+brainstrap_user_skill_skillpartition:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/skill_skillpartition.yml"
+    prefix:   /skill_skillpartition
+
+brainstrap_user_service:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/service.yml"
+    prefix:   /service
+
+brainstrap_user_social:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/social.yml"
+    prefix:   /social
+
+brainstrap_user_portfolio:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/portfolio.yml"
+    prefix:   /portfolio
+
+brainstrap_user_hobby:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/hobby.yml"
+    prefix:   /hobby
+
+brainstrap_user_testimonial:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/testimonial.yml"
+    prefix:   /testimonial
+
+brainstrap_user_skill:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/skill.yml"
+    prefix:   /skill
+
+brainstrap_user_employment:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/employment.yml"
+    prefix:   /employment
+
+brainstrap_user_education:
+    resource: "@BrainstrapUserBundle/Resources/config/routing/education.yml"
+    prefix:   /education
+
+brainstrap_registration_register_from_front:
+    pattern:     /register/from/front
+    defaults: { _controller: BrainstrapUserBundle:Registration:registerFromFront }

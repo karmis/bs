@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+        <link href="{{ asset('bundles/brainstrapuser/css/user-bundle.css') }}" type="text/css" rel="stylesheet">
+    {% endblock %}
+
+    {% block body %}
+        <div class="wrapper">
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script type="text/javascript" src="{{ asset('bundles/brainstrapuser/js/user-bundle.js') }}"></script>
+    {% endblock %}

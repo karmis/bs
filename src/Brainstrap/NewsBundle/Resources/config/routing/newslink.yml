@@ -1,0 +1,30 @@
+newslink:
+    path:     /
+    defaults: { _controller: "BrainstrapNewsBundle:NewsLink:index" }
+
+newslink_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapNewsBundle:NewsLink:show" }
+
+newslink_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapNewsBundle:NewsLink:new" }
+
+newslink_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapNewsBundle:NewsLink:create" }
+    requirements: { _method: post }
+
+newslink_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapNewsBundle:NewsLink:edit" }
+
+newslink_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapNewsBundle:NewsLink:update" }
+    requirements: { _method: post|put }
+
+newslink_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapNewsBundle:NewsLink:delete" }
+    requirements: { _method: post|delete }

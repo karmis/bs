@@ -1,0 +1,30 @@
+education:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Education:index" }
+
+education_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Education:show" }
+
+education_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Education:new" }
+
+education_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Education:create" }
+    requirements: { _method: post }
+
+education_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Education:edit" }
+
+education_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Education:update" }
+    requirements: { _method: post|put }
+
+education_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Education:delete" }
+    requirements: { _method: post|delete }

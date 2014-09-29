@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Brainstrap{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('bower/components/pace/themes/pace-theme-flat-top.css') }}" type="text/css"
+              rel="stylesheet">
+        <link href="{{ asset('bower/components/fontawesome/css/font-awesome.min.css') }}" type="text/css"
+              rel="stylesheet">
+        <link href="{{ asset('bower/components/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css"
+              rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('common/css/common.css') }}"/>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bower/components/pace/pace.min.js') }}"
+            type="text/javascript"></script>
+    <script src="{{ asset('bower/components/jquery/dist/jquery.min.js') }}"
+            type="text/javascript"></script>
+    <script src="{{ asset('bower/components/jquery.migrate/jquery-migrate-1.2.1.min.js') }}"
+            type="text/javascript"></script>
+    <script src="{{ asset('bower/components/bootstrap/dist/js/bootstrap.min.js') }}"
+            type="text/javascript"></script>
+
+    <script src="{{ asset('common/js/bs.utils.js') }}"
+            type="text/javascript"></script>
+{% endblock %}
+</body>
+</html>

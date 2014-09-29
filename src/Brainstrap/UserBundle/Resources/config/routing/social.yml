@@ -1,0 +1,30 @@
+social:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Social:index" }
+
+social_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Social:show" }
+
+social_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Social:new" }
+
+social_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Social:create" }
+    requirements: { _method: post }
+
+social_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Social:edit" }
+
+social_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Social:update" }
+    requirements: { _method: post|put }
+
+social_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Social:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,30 @@
+hobby:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Hobby:index" }
+
+hobby_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Hobby:show" }
+
+hobby_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Hobby:new" }
+
+hobby_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Hobby:create" }
+    requirements: { _method: post }
+
+hobby_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Hobby:edit" }
+
+hobby_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Hobby:update" }
+    requirements: { _method: post|put }
+
+hobby_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Hobby:delete" }
+    requirements: { _method: post|delete }

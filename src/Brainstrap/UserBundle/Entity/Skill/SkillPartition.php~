@@ -1,0 +1,61 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: karmis
+ * Date: 25.08.14
+ * Time: 13:24
+ */
+
+namespace Brainstrap\UserBundle\Entity\Skill;
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SkillPartition
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class SkillPartition {
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="caption", type="string", length=255)
+     */
+    private $caption;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="SkillCategory", mappedBy="partitions")
+     */
+    private $categories;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="published", type="boolean")
+     */
+    private $published;
+
+    public function __toString()
+    {
+        return $this->caption;
+    }
+}

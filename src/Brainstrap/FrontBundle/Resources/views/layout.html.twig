@@ -1,0 +1,167 @@
+{% extends "::base.html.twig" %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+        <link href="{{ asset('bundles/brainstrapfront/css/front-bundle.css') }}" type="text/css" rel="stylesheet">
+    {% endblock %}
+
+    {% block body %}
+
+        <header>
+            <div class="bs-wrap black" style="overflow: visible;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% block headmenu %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="clearfix"></div>
+
+        <content>
+            <div class="bs-wrap black">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% block slider %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="bs-wrap orange">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% block promo %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="bs-wrap grey">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% block difference %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="bs-wrap orange">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% block how %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </content>
+
+        <div class="clearfix"></div>
+
+        <footer>
+            <div class="bs-wrap black">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% block footer %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        {# Register modal #}
+        {% render url('brainstrap_registration_register_from_front') %}
+
+
+    {% endblock %}
+
+
+
+        {% block javascripts %}
+            {{ parent() }}
+            <script src="{{ asset('bundles/brainstrapfront/js/cycle.js') }}"
+                    type="text/javascript"></script>
+            <script src="{{ asset('bundles/brainstrapfront/js/front-bundle.js') }}"
+                    type="text/javascript"></script>
+
+            <script type="text/javascript">
+                BS.hrefs.register = "{{ path('brainstrap_registration_register_from_front') }}";
+                $(function () {
+
+                    $('#bs-register-ajax').click(function () {
+                        var data = $("#form-register").serialize();
+                        $.ajax({
+                            url: BS.hrefs.register,
+                            method: "POST",
+                            data: data,
+                            dataType: 'json',
+                            beforeSend: function(){
+                                $('#bs-register-ajax').button('loading');
+                            },
+                            statusCode: {
+                                200: function(data){
+                                    $('#register-msgs').removeClass();
+                                    var msg = "";
+                                    if(data.status == 'error') {
+                                        $('#register-msgs .alert-title').html('Ошибка регистрации:');
+                                        $('#register-msgs').addClass('alert alert-danger');
+                                        $('#bs-register-ajax').button('reset');
+
+                                        switch (data.answer) {
+                                            case 'invalid_form':
+                                                msg = 'Ошибка заполнения формы. Проверьте правильность заполнения полей.';
+                                            break;
+
+                                            case 'unknow_error':
+                                                msg = 'Ошибка регистрации. Попробуйте зарегистрироваться позже.';
+                                            break;
+
+                                            case 'uniq_error':
+                                                msg = 'Такой пользователь уже существует. Используйте другой почтовый ящик или Восстановите пароль';
+                                            break;
+                                            default:
+                                                msg = 'Критическая ошибка регистрации. Вероятно, регистрация закрыта.';
+                                            break;
+                                        }
+
+                                    } else {
+                                        $('#register-msgs .alert-title').html('Успех:');
+                                        $('#register-msgs').addClass('alert alert-success');
+                                        msg = "Проверьте свою почту для подтверждения регистрации";
+                                        $('#register-buttons').hide();
+                                    }
+
+                                    $('#register-msgs .alert-message').html(msg);
+                                    $('#register-msgs').show();
+
+                                }
+                            }
+                        })
+                    });
+                })
+            </script>
+
+        {% endblock %}

@@ -1,0 +1,57 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Testimonial list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Sname</th>
+                <th>Fname</th>
+                <th>Photo</th>
+                <th>Organization</th>
+                <th>Description</th>
+                <th>Site</th>
+                <th>Tags</th>
+                <th>Published</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('testimonial_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.sname }}</td>
+                <td>{{ entity.fname }}</td>
+                <td>{{ entity.photo }}</td>
+                <td>{{ entity.organization }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.site }}</td>
+                <td>{{ entity.tags }}</td>
+                <td>{{ entity.published }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('testimonial_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('testimonial_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('testimonial_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

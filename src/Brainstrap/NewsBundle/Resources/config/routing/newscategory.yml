@@ -1,0 +1,30 @@
+newscategory:
+    path:     /
+    defaults: { _controller: "BrainstrapNewsBundle:NewsCategory:index" }
+
+newscategory_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapNewsBundle:NewsCategory:show" }
+
+newscategory_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapNewsBundle:NewsCategory:new" }
+
+newscategory_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapNewsBundle:NewsCategory:create" }
+    requirements: { _method: post }
+
+newscategory_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapNewsBundle:NewsCategory:edit" }
+
+newscategory_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapNewsBundle:NewsCategory:update" }
+    requirements: { _method: post|put }
+
+newscategory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapNewsBundle:NewsCategory:delete" }
+    requirements: { _method: post|delete }

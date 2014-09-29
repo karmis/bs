@@ -1,0 +1,38 @@
+<?php
+
+namespace Brainstrap\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Skill
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Skill
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="SkillPath", inversedBy="paths")
+     * @ORM\JoinColumn(name="skill_path_id", referencedColumnName="id")
+     */
+    private $skillPath;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="SkillCategory", inversedBy="categories")
+     * @ORM\JoinColumn(name="skill_category_id", referencedColumnName="id")
+     */
+    private $skillCategory;
+
+
+}

@@ -1,0 +1,60 @@
+<?php
+
+namespace Brainstrap\UserBundle\Entity\Skill;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SkillCategory
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class SkillCategory
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="caption", type="string", length=255)
+     */
+    private $caption;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * Partitions
+     * @ORM\ManyToMany(targetEntity="SkillPartition", orphanRemoval=false, inversedBy="categories")
+     * @ORM\JoinTable(name="SkillCategory_SkillPartition",
+     *      joinColumns={@ORM\JoinColumn(name="skill_category_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="skill_partition_id", referencedColumnName="id")}
+     *      )
+     */
+    private $partitions;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="published", type="boolean")
+     */
+    private $published;
+
+
+    public function __toString()
+    {
+        return $this->caption;
+    }
+}

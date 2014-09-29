@@ -1,0 +1,30 @@
+skill_skill:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Skill\Skill:index" }
+
+skill_skill_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Skill\Skill:show" }
+
+skill_skill_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Skill\Skill:new" }
+
+skill_skill_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Skill\Skill:create" }
+    requirements: { _method: post }
+
+skill_skill_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Skill\Skill:edit" }
+
+skill_skill_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Skill\Skill:update" }
+    requirements: { _method: post|put }
+
+skill_skill_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Skill\Skill:delete" }
+    requirements: { _method: post|delete }

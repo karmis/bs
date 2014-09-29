@@ -1,0 +1,19 @@
+## FOSUser
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Brainstrap\UserBundle\Entity\User
+    group:
+        group_class: Brainstrap\UserBundle\Entity\Group
+    registration:
+        confirmation:
+            enabled:    true
+            from_email:
+                address:        brainstrap.robot@brainstrap.ru
+                sender_name:    Brainstrap Reg
+        form:
+            type: brainstrap_user_registration
+
+    profile:
+        form:
+            type: brainstrap_user_profile

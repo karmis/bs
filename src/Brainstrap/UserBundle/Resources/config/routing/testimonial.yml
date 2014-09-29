@@ -1,0 +1,30 @@
+testimonial:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Testimonial:index" }
+
+testimonial_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Testimonial:show" }
+
+testimonial_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Testimonial:new" }
+
+testimonial_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Testimonial:create" }
+    requirements: { _method: post }
+
+testimonial_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Testimonial:edit" }
+
+testimonial_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Testimonial:update" }
+    requirements: { _method: post|put }
+
+testimonial_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Testimonial:delete" }
+    requirements: { _method: post|delete }

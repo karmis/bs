@@ -1,0 +1,18 @@
+services:
+    brainstrap_news.admin.news:
+        class: Brainstrap\NewsBundle\Admin\NewsAdmin
+        arguments: [~, Brainstrap\NewsBundle\Entity\News, BrainstrapNewsBundle:NewsAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Новости, label: Новости}
+
+    brainstrap_news.admin.news_category:
+        class: Brainstrap\NewsBundle\Admin\NewsCategoryAdmin
+        arguments: [~, Brainstrap\NewsBundle\Entity\NewsCategory, BrainstrapNewsBundle:NewsCategoryAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Новости, label: Категории новостей}
+
+    brainstrap_news.admin.news_link:
+        class: Brainstrap\NewsBundle\Admin\NewsLinkAdmin
+        arguments: [~, Brainstrap\NewsBundle\Entity\NewsLink, BrainstrapNewsBundle:NewsLinkAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Новости, show_in_dashboard: false}

@@ -1,0 +1,30 @@
+skill_skillpartition:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillPartition:index" }
+
+skill_skillpartition_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillPartition:show" }
+
+skill_skillpartition_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillPartition:new" }
+
+skill_skillpartition_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillPartition:create" }
+    requirements: { _method: post }
+
+skill_skillpartition_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillPartition:edit" }
+
+skill_skillpartition_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillPartition:update" }
+    requirements: { _method: post|put }
+
+skill_skillpartition_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillPartition:delete" }
+    requirements: { _method: post|delete }

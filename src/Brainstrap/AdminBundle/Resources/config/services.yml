@@ -1,0 +1,7 @@
+parameters:
+#    brainstrap_admin.example.class: Brainstrap\AdminBundle\Example
+
+services:
+#    brainstrap_admin.example:
+#        class: %brainstrap_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

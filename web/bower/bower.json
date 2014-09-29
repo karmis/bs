@@ -1,0 +1,17 @@
+{
+    "name": "Rain",
+    "dependencies": {
+        "bootstrap": "bootstrap#latest",
+        "jasny-bootstrap": "jasny-bootstrap#latest",
+        "jquery": "jquery#latest",
+        "jquery.migrate": "jquery.migrate#latest",
+        "fontawesome": "components-font-awesome#latest",
+        "lightbox": "lightbox#latest",
+        "jquery-validation": "jquery-validation#latest",
+        "jquery.maskedinput": "jquery.maskedinput#latest",
+        "pace": "pace#latest",
+        "jquery.cycle": "jquery.cycle#latest",
+        "freewall": "freewall#latest",
+        "sticky": "sticky#latest"
+    }
+}

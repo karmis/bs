@@ -1,0 +1,34 @@
+{% extends "BrainstrapUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(function () {
+            BS.Forms.Collection.init(
+                    [
+                        '#fos_user_profile_form_educations',
+                        '#fos_user_profile_form_employments',
+                        '#fos_user_profile_form_skills',
+                        '#fos_user_profile_form_testimonials',
+                        '#fos_user_profile_form_hobbies',
+                        '#fos_user_profile_form_portfolio',
+                        '#fos_user_profile_form_socials',
+                        '#fos_user_profile_form_services'
+//                        '#fos_user_profile_form_skills_0_category'
+
+
+                    ],
+                    {
+                        included: [
+                            '.skill_category_item'
+                        ]
+                    }
+            );
+        });
+
+    </script>
+{% endblock javascripts %}

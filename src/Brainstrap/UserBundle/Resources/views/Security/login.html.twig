@@ -1,0 +1,82 @@
+{% extends "BrainstrapUserBundle::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+
+    <div class="modal fade in" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="loginLabel"
+         aria-hidden="true" style="display: block;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="loginLabel">Вход в личный кабинет</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form"
+                          action="{{ path("fos_user_security_check") }}"  method="POST"
+                          id="form-login">
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+
+                        {% if error %}
+                            <div class="login-errors alert alert-danger">{{ error|trans }}</div>
+                        {% endif %}
+
+                        <div class="form-horizontal fos_user_security_check">
+                            <div class="form-group">
+                                <label for="input_email" class="col-sm-2 control-label">Email</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control validate-email" id="username" name="_username" value="{{ last_username }}"
+                                           required="required"/>
+
+                                    <div class="inputErrors">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input_password" class="col-sm-2 control-label">Пароль</label>
+
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control validate-password" id="password" name="_password" required="required"/>
+
+                                    <div class="inputErrors">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="input_re-password" class="col-sm-2 control-label">Запомнить</label>
+
+                                <div class="col-sm-10">
+                                    <label class="checkbox">
+                                        <input type="checkbox" class="form-control" id="remember_me" name="_remember_me" value="on" checked/>
+                                    </label>
+
+                                    <div class="inputErrors">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div id="register-buttons">
+                                <a href="{{ path('brainstrap_front_homepage') }}">
+                                    <button type="button" class="btn btn-black" data-dismiss="modal">Позже...</button>
+                                </a>
+                                <button type="submit" class="btn btn-orange" data-loading-text="Идет регистрация..."
+                                        id="bs-register-ajax">Войти
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock fos_user_content %}
+

@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+        <link href="{{ asset('bundles/brainstrapuser/css/card-user-bundle.css') }}" type="text/css" rel="stylesheet">
+    {% endblock %}
+
+    {% block body %}
+        CARD!!!111
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+    {% endblock %}

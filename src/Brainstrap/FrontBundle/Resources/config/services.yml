@@ -1,0 +1,7 @@
+parameters:
+#    brainstrap_front.example.class: Brainstrap\FrontBundle\Example
+
+services:
+#    brainstrap_front.example:
+#        class: %brainstrap_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

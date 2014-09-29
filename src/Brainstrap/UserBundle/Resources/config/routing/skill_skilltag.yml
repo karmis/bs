@@ -1,0 +1,30 @@
+skill_skilltag:
+    path:     /
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillTag:index" }
+
+skill_skilltag_show:
+    path:     /{id}/show
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillTag:show" }
+
+skill_skilltag_new:
+    path:     /new
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillTag:new" }
+
+skill_skilltag_create:
+    path:     /create
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillTag:create" }
+    requirements: { _method: post }
+
+skill_skilltag_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillTag:edit" }
+
+skill_skilltag_update:
+    path:     /{id}/update
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillTag:update" }
+    requirements: { _method: post|put }
+
+skill_skilltag_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BrainstrapUserBundle:Skill\SkillTag:delete" }
+    requirements: { _method: post|delete }

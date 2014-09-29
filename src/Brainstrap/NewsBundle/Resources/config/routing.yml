@@ -1,0 +1,15 @@
+brainstrap_news_newslink:
+    resource: "@BrainstrapNewsBundle/Resources/config/routing/newslink.yml"
+    prefix:   /newslink
+
+brainstrap_news_newscategory:
+    resource: "@BrainstrapNewsBundle/Resources/config/routing/newscategory.yml"
+    prefix:   /newscategory
+
+brainstrap_news_news:
+    resource: "@BrainstrapNewsBundle/Resources/config/routing/news.yml"
+    prefix:   /news
+
+brainstrap_news_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BrainstrapNewsBundle:Default:index }
